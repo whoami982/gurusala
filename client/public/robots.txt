@@ -1,7 +1,0 @@
-User-agent: *
-Allow: /
-Disallow: /ml-panel
-Disallow: /ml-panel/
-Disallow: /api/
-
-Sitemap: https://gurusala.guru/sitemap.xml

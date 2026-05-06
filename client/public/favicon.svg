@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 110 110">
+  <defs>
+    <linearGradient id="lg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#a5b4fc"/>
+      <stop offset="100%" stop-color="#c4b5fd"/>
+    </linearGradient>
+  </defs>
+  <rect width="110" height="110" rx="26" fill="#0d0d1f"/>
+  <rect width="110" height="110" rx="26" fill="none" stroke="#1e1b4b" stroke-width="1.5"/>
+  <text x="68" y="96" font-family="'Noto Sans Sinhala','Iskoola Pota',serif"
+    font-size="86" font-weight="900" text-anchor="middle"
+    fill="#4338ca" opacity="0.22">S</text>
+  <text x="50" y="83" font-family="'Noto Sans Sinhala','Iskoola Pota',serif"
+    font-size="56" font-weight="700" text-anchor="middle"
+    fill="url(#lg)">ගු</text>
+</svg>

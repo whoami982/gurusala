@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,300;0,14..32,400;0,14..32,500;0,14..32,600;0,14..32,700;0,14..32,800;0,14..32,900&family=Noto+Sans+Sinhala:wght@400;700&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg: #09090f; --s1: #111118; --s2: #18181f; --s3: #202028; --s4: #28282f;
+  --b1: #252530; --b2: #32323f; --b3: #42424f;
+  --ac: #6366f1; --acl: #818cf8; --acd: rgba(99,102,241,0.1); --acg: rgba(99,102,241,0.18);
+  --t1: #f4f4fb; --t2: #a0a0c0; --t3: #58586a; --t4: #35353f;
+  --grn: #22c55e; --amb: #f59e0b; --red: #ef4444; --pur: #a855f7;
+  --font: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--font);
+  background: var(--bg); color: var(--t1);
+  min-height: 100vh; overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  font-size: 14px; line-height: 1.5; letter-spacing: -0.01em;
+}
+* { -webkit-tap-highlight-color: transparent; }
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-thumb { background: var(--b2); border-radius: 2px; }
+::selection { background: rgba(99,102,241,0.25); color: var(--acl); }
+button, input, select, textarea { font-family: var(--font); }
+a { color: inherit; text-decoration: none; }
+
+@keyframes fadeIn { from { opacity:0 } to { opacity:1 } }
+@keyframes slideUp { from { transform:translateY(20px);opacity:0 } to { transform:none;opacity:1 } }
+@keyframes spin { to { transform:rotate(360deg) } }
+@keyframes livePulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.5;transform:scale(1.15)} }
+
+/* ── VIDEO GRID ── */
+.vgrid { display:grid; grid-template-columns:repeat(5,1fr); gap:14px; contain:layout style; }
+@media(max-width:1280px){.vgrid{grid-template-columns:repeat(4,1fr)}}
+@media(max-width:960px){.vgrid{grid-template-columns:repeat(3,1fr);gap:10px}}
+@media(max-width:640px){.vgrid{grid-template-columns:repeat(2,1fr);gap:8px}}
+
+/* ── DESKTOP NAV — completely hidden on mobile, zero height, zero space ── */
+nav.desktop-nav { display:flex; }
+@media(max-width:640px) {
+  nav.desktop-nav {
+    display: none !important;
+    visibility: hidden !important;
+    height: 0 !important;
+    min-height: 0 !important;
+    max-height: 0 !important;
+    overflow: hidden !important;
+    position: static !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    border: none !important;
+  }
+  .mob-pad { padding-bottom:86px !important; }
+  body { font-size:15px; }
+}
+
+/* ── MOBILE TOP BAR — sticky, exact 54px ── */
+.mobile-top-bar {
+  display: none;
+  position: sticky;
+  top: 0;
+  z-index: 200;
+  height: 54px;
+  min-height: 54px;
+  padding: 0 12px;
+  background: rgba(9,9,15,0.97);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--b1);
+  align-items: center;
+  gap: 10px;
+  box-sizing: border-box;
+}
+@media(max-width:640px) {
+  .mobile-top-bar { display:flex !important; }
+  .mob-nav        { display:block !important; }
+}
+@media(min-width:641px) {
+  .mobile-top-bar { display:none !important; }
+  .mob-nav        { display:none !important; }
+}
